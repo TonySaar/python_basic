@@ -1,6 +1,6 @@
 #IEDs
 .idea/
-.vscodeq
+.vscode
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -29,6 +29,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+conspects/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
