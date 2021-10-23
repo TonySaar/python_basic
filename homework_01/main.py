@@ -2,10 +2,7 @@ from math import sqrt
 
 
 def power_numbers(*numbers):
-    res = []
-    for elem in numbers:
-        res.append(elem * elem)
-    return res
+    return [elem ** 2 for elem in numbers]
 
 
 ODD = "odd"
@@ -28,26 +25,29 @@ def is_prime(n):
 
 
 def is_even(n):
-    if n % 2 == 0:
-        return True
-    else:
-        return False
+    return n % 2 == 0
 
 
 def is_odd(n):
-    if n % 2 != 0:
-        return True
-    else:
-        return False
+    return n % 2 != 0
+
+
+filters = {
+    EVEN: is_even,
+    ODD: is_odd,
+    PRIME: is_prime,
+}
 
 
 def filter_numbers(num, filter_type):
-    if filter_type == EVEN:
-        num = list(filter(is_even, num))
-        return num
-    if filter_type == ODD:
-        num = list(filter(is_odd, num))
-        return num
-    if filter_type == PRIME:
-        num = list(filter(is_prime, num))
-        return num
+    return list(filter(filters[filter_type],num))
+
+    # if filter_type == EVEN:
+    #     num = list(filter(is_even, num))
+    #     return num
+    # if filter_type == ODD:
+    #     num = list(filter(is_odd, num))
+    #     return num
+    # if filter_type == PRIME:
+    #     num = list(filter(is_prime, num))
+    #     return num
